@@ -55,7 +55,7 @@ Dataset Preparation
 
 # Training (optional)
 
-1. Valentini dataset training
+## Valentini dataset training
 
 Run the first-stage training on the Valentini dataset:
 
@@ -73,7 +73,7 @@ This script will:
 
 - Save checkpoints
 
-2. MS-SNSD Fine-tuning
+## MS-SNSD Fine-tuning
 
 After completing Valentini training, fine-tune on MS-SNSD:
 
