@@ -1,5 +1,8 @@
 # Copyright (c) Facebook, Inc. and its affiliates.
 # All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
 # author: adefossez
 
 import math
@@ -84,6 +87,9 @@ def downsample2(x):
     filtered = filtered.view(B, C, -1)[..., :-1]  # drop extra sample
     out = 0.5 * (x_even + filtered)
     return out
+
+# Modified by Andrei Filip, May 2025:
+# – Changed the model to be split into encoder, LSTM, and decoder so that the encoder and decoder can be exported to ONNX.
 
 class CausalDemucsSplit(nn.Module):
     def __init__(self, chin=1, chout=1, hidden=H, depth=L, kernel_size=K, stride=S_conv,
